@@ -3,6 +3,7 @@ const form = document.getElementById("submit");
 const resultHeading = document.getElementById("result-heading");
 const searchBtn = document.querySelector(".search-btn");
 const singleMeal = document.getElementById("single-meal");
+const meals = document.getElementById("meals");
 form.addEventListener("submit", getRecipe);
 
 function getRecipe(e) {
@@ -17,7 +18,7 @@ function getRecipe(e) {
         if (res.meals === null) {
           resultHeading.innerHTML = `<h3>There no results for this recipe! Please try another recipe!`;
         } else {
-          singleMeal.innerHTML = res.meals
+          meals.innerHTML = res.meals
             .map(
               (meal) =>
                 `
